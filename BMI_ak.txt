@@ -1,0 +1,14 @@
+#Cwiczenie 1. 2.Program liczacy BMI
+
+def BMI(weight, height):
+    return(weight / (height ** 2))
+
+def main():
+    waga = input('Your weight: ')
+    waga = float(waga)
+    wzrost = input('Your height: ')
+    wzrost = float(wzrost)
+    wzrost = wzrost / 100
+    print('Twoje BMI to', BMI(waga, wzrost))
+
+main()
