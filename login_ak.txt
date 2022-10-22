@@ -1,0 +1,24 @@
+#Cwiczenie 2. Napisz funkcję, która przyjmie imię i nazwisko, a nastepnie zwróci login. Login powinien być stringiem,
+# w którym dwa pierwsze znaki są inicjałami, a nastepne znaki to odpowiednio długość imienia i nazwiska, np.: login('Jan Kowalski') == JK38
+'''
+def login(name, surname):
+    log1n = name[0] + surname[0] + str(len(name)) + str(len(surname))
+    return(log1n)
+def main():
+    imie = str(input('Give name: '))
+    nazwisko = str(input('Give surname: '))
+    print(login(imie, nazwisko))
+main()
+'''
+
+# Zmodyfikuj tak, żeby powstał program pytający o imię i nazwisko (łącznie, jako jeden string), a następnie proponujący mu login.
+'''
+def login(name):
+    log1n = name[0][0] + name[1][0] + str(len(name[0])) + str(len(name[1]))
+    return(log1n)
+def main():
+    godnosc = str(input('Give name and surname: '))
+    nazwa = godnosc.split()
+    print(login(nazwa))
+main()
+'''
