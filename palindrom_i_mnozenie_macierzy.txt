@@ -1,0 +1,46 @@
+#Cwiczenie 3. Program sprawdzajacy czy string jest palindromem:
+'''
+def fun_if_palidrome(word):
+    return word == word[::-1]
+our_word = str(input("Give string to check if palindrome: "))
+print(fun_if_palidrome(our_word))
+'''
+
+#Cwiczenie 3. Mnożenie dwóch macierzy kwadratowych
+'''
+def main():
+    n = 2 #rozmiar macierzy
+    final_list1 = []
+    k = 0
+    for i in range(0, n):
+        tmp_list = []
+        for j in range(0, n):
+            print("Give row", i+1, "column", j+1, "figure: ")
+            nr = float(input())
+            tmp_list.append(nr)
+            k += 1
+        final_list1.append(tmp_list)
+    print(final_list1)
+
+    final_list2 = []
+    k = 0
+    for i in range(0, n):
+        tmp_list = []
+        for j in range(0, n):
+            print("Give row", i + 1, "column", j + 1, "figure: ")
+            nr = float(input())
+            tmp_list.append(nr)
+            k += 1
+        final_list2.append(tmp_list)
+    print(final_list2)
+    #multi_matrix = [[0]*n]*n
+    multi_matrix = [[0, 0], [0, 0]]
+    print(multi_matrix)
+    for i in range(0, n):
+        for j in range(0, n):
+            for k in range(0, n):
+                multi_matrix[i][j] = multi_matrix[i][j] + final_list1[i][k] * final_list2[k][j]
+                print(multi_matrix)
+    print(multi_matrix)
+main()
+'''
