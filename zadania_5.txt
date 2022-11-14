@@ -1,0 +1,46 @@
+#Cwiczenie 5. Mamy funkcję, która przyjmuje nieznaną liczbę argumentów ze słowami kluczowymi. Słowami kluczowymi będą
+# tutaj identyfikatory (ID), a wartościami wypożyczone książki. Funkcja zwraca w postaci listy użytkowników (ID),
+# którzy wypożyczyli podaną książkę.
+'''
+def fun_if_loaned(btitle, **books):
+    res = []
+    for key, val in books.items():
+        for i in val:
+            if btitle == i:
+                res.append(key)
+    return res
+
+title = str(input("Give book title: "))
+print(fun_if_loaned(title, id1=['Potop', 'Pan Tadeusz'], id2=['Ferdydurke'], id3=['Zbrodnia i kara', 'Potop', 'Harry Potter']))
+'''
+
+# Cwiczenie 5. Napisać wyrażenie regularne, które usuwa wszystkie małe litery z ciągu znaków. Przykładowe działanie
+# tego wyrażenia na "ATTTGgccTaC" powinno zwrócić "ATTTGTC".
+'''
+import re
+word = "ATTTGgccTaC"
+expre = r"[^a-z]*"
+res = re.findall(expre, word)
+print(''.join(res))
+'''
+
+#Cwiczenie 5. Napisać wyrażenie regularne, które w zadanym tekście odszuka wszystkie adresy e-mail i zapisze je do listy.
+'''
+import re
+word = "ala ma kota: ala@interia.pl ola hahaha@wp.pl grzes nie ma pk81@gmail.com"
+expre = r"[a-z]*[0-9]*@[a-z]*\.[a-z]*"
+res = re.findall(expre, word)
+print(res)
+'''
+
+# Cwiczenie 5. Dana jest lista stringów zawierających imie i nazwisko. Napisać wyrażenie regularne (po liście oczywiście
+# trzeba iść pętlą), które zwróci nam elementy listy, w których obydwa słowa rozpoczynają się od tej samej litery.
+'''
+import re
+hlp=[]
+L = ["Adam Nowak", "Kasia Klimczak", "Maria Rudzik"]
+for i in L:
+    hlp = i.split()
+    if hlp[0][0] == hlp[1][0]:
+        print(i)
+'''
