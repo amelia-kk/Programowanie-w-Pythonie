@@ -1,0 +1,19 @@
+#Cwiczenia 6. Zadanie4: Korzystając w wyrażeń regularnych, przekształcić zadany ciąg zdań (o losowej wielkości liter)
+# na zdania zaczynające się od dużej litery (a kolejne będą już małe). Tutaj warto użyć lambdy.
+'''
+import re
+s = 'aldaAS dsADWF ADSshtKK. Gdwygh GIRT. fvrgoij muewrsd we. EEE.'
+res = re.sub(r'(.+)', lambda x: x.group(1).lower(), s)
+res = re.sub(r'(^[a-z])', lambda x: x.group(1).upper(), res)
+res = re.sub(r'(\.|\. )([a-z])', lambda x: x.group(1)+ x.group(2).upper(), res)
+print(res)
+'''
+
+#Cwiczenia 6. Zadanie5: Napisać wyrażenie regularne, które w zadanym tekście zmieni wszystkie daty z formatu:
+# YY-MM-DD na DD-MM-YY. Przykładowo zamieni 2019-11-28 na 28-11-2019.
+'''
+import re
+s = "2019-11-28"
+s = re.sub(r"([0-9]*)-([0-9]*)-([0-9]*)", r"\3-\2-\1", s)
+print(s)
+'''
