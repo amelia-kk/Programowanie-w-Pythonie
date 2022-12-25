@@ -15,6 +15,7 @@ seq_list = ["ATCGGGCAT", "ATCGA", "TTTGCGA"]
 count_list = list(map(fun_div_by_3, seq_list))
 final_list = list(filter(lambda a: a is not None, count_list))
 print(final_list)
+#to można było dużo prościej i krócej
 '''
 #Cwiczenie 4. Dany jest string, w którym znajduą się sekwencje nukleotydowe. W 2 linijkach kodu, zapisz każdą sekwencję
 # jako kolejny element listy i posortuj je wg liczby uracyli (od sekwencji zawierającej najwięcej, do tej najmniej). Uwaga: warto wrócić do ćwiczeń 2.
