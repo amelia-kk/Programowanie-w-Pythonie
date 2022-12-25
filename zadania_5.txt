@@ -44,3 +44,4 @@ for i in L:
     if hlp[0][0] == hlp[1][0]:
         print(i)
 '''
+#no dobra, a gdzie tutaj wykorzystujesz re?
