@@ -1,0 +1,89 @@
+# Cwiczenia 7. napisz skrypt, który przyjmie nazwę programu, 3 parametry i zależnie od parametrów wykona działanie, np.:
+# skrypt.py 3 + 4 zwróci 7, ale ten sam skrypt wywołany jako:
+# skrypt.py 3 - 4 zwróci -1  Możesz to zrobić dla np. tylko dodawania i odejmowania.
+# a co się stanie, jeżeli w tak napisanym skrypcie użytkownik poda wyłącznie 1 argument? dodaj obsługę błędów złej liczby argumentów
+'''
+import sys
+
+try:
+    x = int(sys.argv[1])
+    action = sys.argv[2]
+    y = int(sys.argv[3])
+    if action == "+":
+        result = x + y
+    if action == "-":
+        result = x - y
+    print(result)
+
+except IndexError:
+        # not enough arguments given
+        print("\nGive all arguments")
+'''
+
+# Cwiczenia 7. modyfikuj poprzedni program (tak na prawdę kompletnie napisz od nowa) poprzedni skrypt, korzystając z
+# funkcji eval() tak żeby można było wykonywać wszystkie obliczenia, do których nie potrzeba korzystać z biblioteki
+# math. Zauważ, że wykorzystanie tutaj funkcji eval pozwala na przyjęcie dowolnej liczby dowolnych argumentów.
+'''
+import sys
+
+action = ""
+for i in range(len(sys.argv)):
+    if i != 0:
+        action += sys.argv[i]
+
+result = eval(action)
+print(result)
+'''
+
+# Cwiczenia 7. Napisz program, który pyta użytkownika o datę urodzenia w zadanym formacie, a następnie oblicza ile lat,
+# miesięcy i dni upłynęło od wtedy do teraz.
+'''
+from datetime import date
+
+a = int(input("Give year of birth:"))
+b = int(input("Give month of birth:"))
+c = int(input("Give day of birth:"))
+birth_date = date(year = a, month = b, day = c)
+todays_date = date(year = date.today().year, month = date.today().month, day = date.today().day)
+difference = todays_date - birth_date
+difference = difference.days
+
+years = int(difference / 365)
+months = int((difference - years * 365) / 30)
+days = int(difference - years * 365 - months * 30)
+
+print("Years = ", years)
+print("Months = ", months)
+print("Days = ", days)
+'''
+
+# Cwiczenia 7. Napisz taką klasę, która przyjmuje promień i wysokość pojemnika o kształcie walca, a następnie pozwala
+# na zwrócenie: pola podstawy, pola bocznego, objętości, długości najdłuższego pręta jaki można zmieścić do tego pojemnika tak żeby nie wystawał :)
+'''
+class Cylinder:
+    def __init__(self):
+        self.radius = float(input('Give radius:'))
+        self.height = float(input('Give height:'))
+
+    def base_calculator(self):
+        base_area = 3.14 * self.radius ** 2
+        print('The base area is {}'.format(base_area))
+
+    def side_calculator(self):
+        side_area = 2 * 3.14 * self.radius * self.height
+        print('The side area is {}'.format(side_area))
+
+    def volume_calculator(self):
+        volume = 3.14 * self.radius ** 2 * self.height
+        print('The volume is {}'.format(volume))
+
+    def diagonal_calculator(self):
+        diagonal = ((2 * self.radius) **2 + self.height **2) **(1/2)
+        print('The diagonal is {}'.format(diagonal))
+
+our_cylinder = Cylinder()
+our_cylinder.base_calculator()
+our_cylinder.side_calculator()
+our_cylinder.volume_calculator()
+our_cylinder.diagonal_calculator()
+'''
